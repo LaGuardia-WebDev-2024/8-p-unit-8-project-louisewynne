@@ -1,7 +1,15 @@
 //🟢setup Function - will run once
 setup = function() {
     size(600, 400);
-    background(255,255,255,0);
+    
+    
+};
+var eagleMove = 0
+var bunnyHop = 0
+//🟢draw Function - will run on repeat
+draw = function(){
+
+ background(255,255,255,0);
     
     //sun
     drawSun(370,60);
@@ -37,22 +45,24 @@ setup = function() {
     drawChick3(350,340);
 
     //flying birds
-    drawEagle(500,60);
+    drawEagle(520 + eagleMove,60);
     drawTurkey(120,270);
     drawOwl(40,100);
 
     //rodents
-    drawBunny(500,320)
+    drawBunny(500,320 -bunnyHop)
 
     //pig and cow
     drawCow(520,210)
     drawPig(500,230)
 
-    
-};
+    eagleMove -= 3;
 
-//🟢draw Function - will run on repeat
-draw = function(){
+    bunnyHop += 1;
+
+    if(bunnyHop > 50){
+      bunnyHop -=;
+    }
 
 };
 
