@@ -5,14 +5,21 @@ setup = function() {
     
 };
 var eagleMove = 0
-var bunnyHop = 0
+var timerX = 0
+var cloudMove = 0
 //🟢draw Function - will run on repeat
 draw = function(){
 
  background(255,255,255,0);
     
+    
+
     //sun
     drawSun(370,60);
+
+    fill(255,255,255)
+    //clouds
+    drawCloud(550-cloudMove,100);
 
     //grain
     drawGrain(300,200)
@@ -50,19 +57,31 @@ draw = function(){
     drawOwl(40,100);
 
     //rodents
-    drawBunny(500,320 -bunnyHop)
+    drawBunny(500,320)
 
     //pig and cow
     drawCow(520,210)
     drawPig(500,230)
 
+    //bugs
+    drawCatapillar(200,390)
+    drawLadyBug(100,350);
+    //drawBee(200,200);
+    drawGrasshopper(180,350);
+    drawGrasshopper(340,390);
+
+    fill(255,0,0)
+    ellipse(timerX,200,10,10);
+
     eagleMove -= 3;
 
-    bunnyHop += 1;
+  
+    cloudMove += .5;
 
-    if(bunnyHop > 50){
-      bunnyHop -=;
-    }
+    timerX +=2
+
+    
+    
 
 };
 
@@ -117,9 +136,9 @@ var drawTurkey = function(turkeyX, turkeyY){
   text("🦃",turkeyX,turkeyY)
 };
 
-var drawBunny = function(bunnyX, bunnyY){
+var drawBunny = function(bunnyX, bunnyHop){
   textSize(30);
-  text("🐇",bunnyX, bunnyY)
+  text("🐇",bunnyX, bunnyHop)
 };
 
 var drawOwl = function(owlX, owlY){
@@ -142,10 +161,40 @@ var drawSun = function(sunX, sunY){
   text("🌞",sunX, sunY)
 };
 
+var drawCloud = function(cloudX, cloudY){
+  textSize(100);
+  text("☁",cloudX, cloudY)
+};
+
 var drawGrain = function(grainX, grainY){
   textSize(20);
   text("🌾",grainX, grainY)
 };
+
+var drawCatapillar = function(catapillarX, catapillarY){
+  textSize(20);
+  text("🐛", catapillarX, catapillarY)
+}
+
+var drawLadyBug = function(ladyBugX, ladyBugY){
+  textSize(20);
+  text("🐞", ladyBugX, ladyBugY)
+}
+
+var drawBee = function(beeX, beeY){
+  textSize(20);
+  text("🐝", beeX, beeY)
+}
+
+var drawGrasshopper = function(grasshopperX, grasshopperY){
+  textSize(20);
+  text("🦗", grasshopperX, grasshopperY)
+}
+
+var drawLeaf = function(leafX, leafY){
+  textSize(20);
+  text("🍃", leafX, leafY)
+}
 
 
 
