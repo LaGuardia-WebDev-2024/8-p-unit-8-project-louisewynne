@@ -5,15 +5,11 @@ setup = function() {
     
 };
 var eagleMove = 0
-var timerX = 0
 var cloudMove = 0
-var leafFall = 0
 //🟢draw Function - will run on repeat
 draw = function(){
 
  background(255,255,255,0);
-    
-    
 
     //sun
     drawSun(370,60);
@@ -64,37 +60,9 @@ draw = function(){
     drawCow(520,210)
     drawPig(500,230)
 
-    //bugs
-    //drawCatapillar(200,390)
-    //drawLadyBug(100,350);
-    //drawBee(200,200);
-    //drawGrasshopper(180,350);
-    //drawGrasshopper(340,390);
-
-    //leaves
-    //drawLeaf(100,20+leafFall);
-    //drawLeaf(150,-100+leafFall);
-    //drawLeaf(200,-200+leafFall)
-    //drawLeaf(300,-40+leafFall);
-    //drawLeaf(400,-150+leafFall);
-    //drawLeaf(120,-300+leafFall);
-    //drawLeaf(190,-250+leafFall);
-    //drawLeaf(310,-400+leafFall);
-    //drawLeaf(390,-350+leafFall);
-    
-
-
-    fill(255,0,0)
-    ellipse(timerX,200,10,10);
-
     eagleMove -= 3;
-
   
     cloudMove += .5;
-
-    timerX +=1
-
-    leafFall +=1
 
     if(mousePressed) {
       fill(0,0,50,180)
@@ -113,6 +81,10 @@ draw = function(){
       drawSleep(270,290);
       drawSleep(380,330);
       drawSleep(350,320);
+      drawSleep(120,240);
+      drawSleep(500,290);
+      drawSleep(520,170);
+      drawSleep(500,200);
     }
 
 };
@@ -202,31 +174,6 @@ var drawGrain = function(grainX, grainY){
   textSize(20);
   text("🌾",grainX, grainY)
 };
-
-var drawCatapillar = function(catapillarX, catapillarY){
-  textSize(20);
-  text("🐛", catapillarX, catapillarY)
-}
-
-var drawLadyBug = function(ladyBugX, ladyBugY){
-  textSize(20);
-  text("🐞", ladyBugX, ladyBugY)
-}
-
-var drawBee = function(beeX, beeY){
-  textSize(20);
-  text("🐝", beeX, beeY)
-}
-
-var drawGrasshopper = function(grasshopperX, grasshopperY){
-  textSize(20);
-  text("🦗", grasshopperX, grasshopperY)
-}
-
-var drawLeaf = function(leafX, leafY){
-  textSize(20);
-  text("🍃", leafX, leafY)
-}
 
 var drawMoon = function(moonX, moonY){
   textSize(75);
